@@ -10,7 +10,7 @@ Extend your image class from the "WatermarkImage" class and implement the method
 
 class MyImage extends WatermarkImage {
 
-  // by overriding this, you can define whehter to automatically add the watermark or not
+  // by overriding this, you can define whether to automatically add the watermark or not
   // (this can also be controlled in templates for every single image)
   protected $addWatermark = true;
   
@@ -65,7 +65,7 @@ class MyDataObject extends DataObject {
 
 ### Template Usage
 In your templates, you can switch on and off the watermark:
-```
+```html
 <% with $CoverImage %>
   <!-- this image will have a watermark, if $addWatermark (from the first example) is set to true, 
        otherwise the watermark is omitted -->
