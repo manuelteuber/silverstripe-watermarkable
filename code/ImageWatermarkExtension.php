@@ -22,7 +22,7 @@ class ImageWatermarkExtension extends DataExtension {
     $watermark_width = ceil($image_width / 2);
     $watermark_height = ceil($image_height / 2);
     if ($watermarkFile->getWidth() > $watermark_width || $watermarkFile->getHeight() > $watermark_height) {
-      $watermarkFile = $watermarkFile->SetMaxRatioSize($watermark_width, $watermark_height);
+      $watermarkFile = $watermarkFile->SetRatioSize($watermark_width, $watermark_height);
     }
     $watermark_path = $watermarkFile->getFullPath();
     list($watermark_width, $watermark_height, $watermark_type) = getimagesize($watermark_path);
