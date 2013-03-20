@@ -27,8 +27,8 @@ class WatermarkGD extends GDBackend {
     // TODO: make this dynamic
     $watermark_width = ceil($image_width / 2);
     $watermark_height = ceil($image_height / 2);
-    if ($this->watermark->WiderThan($watermark_width) || $this->watermark->HigherThan($watermark_height)) {
-      $this->watermark = $this->watermark->SetMaxRatioSize($watermark_width, $watermark_height);
+    if ($this->watermark->getWidth() > $watermark_width || $this->watermark->getHeight() > $watermark_height) {
+      $this->watermark = $this->watermark->SetRatioSize($watermark_width, $watermark_height);
     }
     $watermark_path = $this->watermark->getFullPath();
     list($watermark_width, $watermark_height, $watermark_type) = getimagesize($watermark_path);
