@@ -89,9 +89,9 @@ class WatermarkGD extends GDBackend {
       $transparency = 0;
     }
     
-    $quality = Object::get_static(get_class($this), 'default_quality');
+    $quality = Config::inst()->get(get_class($this), 'default_quality');
     if (empty($quality)) {
-      $quality = Object::get_static('GDBackend', 'default_quality');
+      $quality = Config::inst()->get('GDBackend', 'default_quality');
     }
     if (empty($quality)) {
       $quality = 100;
